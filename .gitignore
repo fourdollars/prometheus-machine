@@ -1,0 +1,10 @@
+# Build artifacts
+*.charm
+build/
+
+# Python
+*.py[cod]
+__pycache__/
+.tox/
+venv/
+.venv/

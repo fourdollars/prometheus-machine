@@ -1,0 +1,33 @@
+name: prometheus-machine
+display-name: Prometheus Machine
+summary: Prometheus monitoring system for machine deployments
+description: |
+  A Juju machine charm that deploys Prometheus, an open-source monitoring
+  and alerting toolkit. This charm supports consuming metrics from applications
+  that provide the prometheus_scrape interface.
+
+  Prometheus features:
+  - Multi-dimensional data model with time series data
+  - Flexible query language (PromQL)
+  - Pull-based metrics collection
+  - Service discovery integration
+  - Built-in alerting
+
+maintainers:
+  - https://github.com/fourdollars/prometheus-machine
+
+requires:
+  metrics-endpoint:
+    interface: prometheus_scrape
+    limit: 1
+
+provides:
+  grafana-source:
+    interface: grafana_datasource
+
+peers:
+  prometheus-peers:
+    interface: prometheus_peers
+
+assumes:
+  - juju >= 3.1

@@ -1,0 +1,64 @@
+options:
+  prometheus-version:
+    type: string
+    default: "2.53.0"
+    description: |
+      Version of Prometheus to install. Defaults to latest stable release.
+      
+  listen-address:
+    type: string
+    default: "0.0.0.0:9090"
+    description: |
+      Address on which to expose the Prometheus web interface and API.
+      
+  retention-time:
+    type: string
+    default: "15d"
+    description: |
+      How long to retain samples in storage. Units: y, w, d, h, m, s, ms.
+      Examples: 15d, 1w, 1y
+      
+  retention-size:
+    type: string
+    default: "0"
+    description: |
+      Maximum number of bytes of storage blocks to retain. Units: B, KB, MB, GB, TB, PB, EB.
+      0 means no limit. Oldest data will be removed first.
+      Examples: 512MB, 1GB, 10GB
+      
+  external-url:
+    type: string
+    default: ""
+    description: |
+      The URL under which Prometheus is externally reachable (for example, if behind a reverse proxy).
+      Used for generating relative and absolute links back to Prometheus itself.
+      
+  log-level:
+    type: string
+    default: "info"
+    description: |
+      Log level. One of: [debug, info, warn, error]
+      
+  enable-admin-api:
+    type: boolean
+    default: false
+    description: |
+      Enable Prometheus admin API for operations like snapshot and delete series.
+      
+  scrape-interval:
+    type: string
+    default: "1m"
+    description: |
+      Default scrape interval for targets. Examples: 15s, 1m, 5m
+      
+  scrape-timeout:
+    type: string
+    default: "10s"
+    description: |
+      Default scrape timeout for targets. Examples: 5s, 10s, 30s
+      
+  evaluation-interval:
+    type: string
+    default: "1m"
+    description: |
+      How frequently to evaluate alerting and recording rules. Examples: 15s, 1m, 5m
