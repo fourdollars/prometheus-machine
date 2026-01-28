@@ -104,7 +104,13 @@ class PrometheusMachineCharm(CharmBase):
                 source_type="prometheus",
                 source_url=prometheus_url,
                 relation_name="grafana-source",
+                refresh_event=[
+                    self.on.config_changed,
+                    self.on.start,
+                    self.on.upgrade_charm,
+                ],
             )
+            logger.info(f"GrafanaSourceProvider initialized with URL: {prometheus_url}")
         else:
             logger.warning("GrafanaSourceProvider not available")
             self.grafana_source_provider = None
