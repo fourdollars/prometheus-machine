@@ -1,5 +1,8 @@
 # Prometheus Machine Charm
 
+[![GitHub](https://img.shields.io/badge/GitHub-fourdollars/prometheus--machine-blue.svg)](https://github.com/fourdollars/prometheus-machine)
+[![Charmhub](https://charmhub.io/prometheus-machine/badge.svg)](https://charmhub.io/prometheus-machine)
+
 A Juju machine charm for deploying Prometheus on bare metal, VMs, and LXD containers.
 
 ## Features
